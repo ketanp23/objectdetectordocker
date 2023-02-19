@@ -53,15 +53,13 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSHKEY }}
+          #key: ${{ secrets.SSHKEY }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           #passphrase: ${{ secrets.PASSPHRASE }}
           envs: IMAGE_NAME,REGISTRY,{{ secrets.DIGITALOCEAN_ACCESS_TOKEN }},GITHUB_SHA
           script: |
-            echo ${{ secrets.HOST }}
-            echo ${{ secrets.SSHKEY }}
-            echo $IMAGE_NAME
-            echo ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-            echo $REGISTRY
+
             # Login to registry
             docker login -u ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} -p ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} registry.digitalocean.com
             # Stop running container
