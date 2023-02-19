@@ -4,9 +4,10 @@ import jsonpickle
 app = Flask(__name__)
 
 
+
 @app.route('/api/test', methods=['GET'])
 def test():
-    response = {'message': 'API hit test'}
+    response = {'message': 'API hit iimv'}
     # encode response using jsonpickle
     response_pickled = jsonpickle.encode(response)
 
