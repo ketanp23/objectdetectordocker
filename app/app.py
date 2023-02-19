@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/api/test', methods=['GET'])
 def test():
-    response = {'message': 'API hit iimv by ishan and ketan'}
+    response = {'message': 'API hit iimv by ishan and ketan automated workflow'}
     # encode response using jsonpickle
     response_pickled = jsonpickle.encode(response)
 
